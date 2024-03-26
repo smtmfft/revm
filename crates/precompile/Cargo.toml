@@ -22,7 +22,9 @@ sha2 = { version = "0.10", default-features = false }
 aurora-engine-modexp = { version = "1.0", default-features = false }
 
 # Optional KZG point evaluation precompile
-c-kzg = { version = "0.4.1", default-features = false, optional = true }
+c-kzg = { git = "https://github.com/smtmfft/c-kzg-4844", branch = "remove-file-io", optional = true, default-features = false, features = [
+    "preload-kzg-settings",
+] }
 
 # ecRecover precompile
 k256 = { version = "0.13.3", default-features = false, features = ["ecdsa"] }

@@ -27,7 +27,9 @@ bitflags = { version = "2.4.2", default-features = false }
 
 # For setting the CfgEnv KZGSettings. Enabled by c-kzg flag.
 #c-kzg = { version = "0.4.0", default-features = false, optional = true }
-c-kzg = {git = "https://github.com/smtmfft/c-kzg-4844", branch = "remove-file-io", optional = true }
+c-kzg = { git = "https://github.com/smtmfft/c-kzg-4844", branch = "remove-file-io", optional = true, default-features = false, features = [
+    "preload-kzg-settings",
+] }
 once_cell = { version = "1.19", default-features = false, optional = true }
 
 # utility
@@ -35,7 +37,10 @@ enumn = "0.1"
 derive_more = { version = "0.99", optional = true }
 
 # optional
-serde = { version = "1.0", default-features = false, features = ["derive", "rc"], optional = true }
+serde = { version = "1.0", default-features = false, features = [
+    "derive",
+    "rc",
+], optional = true }
 
 [build-dependencies]
 hex = { version = "0.4", default-features = false }
